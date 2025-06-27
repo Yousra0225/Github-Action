@@ -5,7 +5,7 @@
 
 ## 1. The name of the workflow :
 ```yml
-name: Java CI with Mavenecri # or title 
+name: Java CI with Maven # title 
 ```
 
 ### 2. [Events](https://docs.github.com/en/actions/reference/events-that-trigger-workflows)
@@ -20,3 +20,13 @@ on:
 
 ### 3. Jobs 
 ```yml
+# 
+jobs: # job groups a set of actions that will be executed
+    build: # name of the jobs (arbitrary)
+    run-on: ubuntu-latest # operating system ex: windows-latest macos-latest ...
+    steps: # liste of step to be followed 
+    - uses: actions/checkout@v2 # to use a github action already exists in the repository 
+                    # actions: where predefined actions are hosted
+    - name: run-tests # name of the action
+    - run: java -jar test4poo.jar poo.* #runing a command ex: linux command 
+```
